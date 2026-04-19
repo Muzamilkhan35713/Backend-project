@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>User Profile</h1>
+    <br>
+    <img src="{{url_for('static',filename='profile_pics/' + user.profile_pic)}}" width="150">
+    <form method="POST" enctype="multipart/form-data">
+        <label for="profile">Change profile picture:</label>
+        <input type="file" name="profile_pic">
+        <button type="submit">Upload</button>
+    </form>
+
+
+     <br><br>
+    <p><strong>User ID:</strong> {{ user.id}}</p>
+     <p><strong>User name</strong>{{user.name}}</p>
+     <br>
+     <a href="/dashboard">Back to Dashboard</a>
+</body>
+</html>

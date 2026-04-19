@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit profile</title>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+        <p style="color:red;">{{ message }}</p>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+    <h1>Edit profile </h1>
+    <form method="POST">
+        <Label>Username:</Label>
+        <input type="text" name="name" value="{{ user.name }}" placeholder="username" required>
+        <label>new passsword:</label>
+        <input type="password" name="password" placeholder="leave if not went to change">
+        <button type="submit">Update profile</button>
+    </form>
+
+</body>
+</html>
